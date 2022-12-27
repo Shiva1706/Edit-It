@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Sevillana&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #f963b9, #e870d0, #d27de3, #b88af1, #9b95fa, #77a5ff, #51b2ff, #2dbdff, #00ceff, #00deff, #31edf9, #5ffbf1);
+}
+
+
+.container{
+    width: 850px;
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 20px 0 rgba( 0, 0, 0, 0.1 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 30px 35px 35px;
+}
+
+.container.disable :where(.editor-panel, .reset-filter, .save-img){
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.container h2{
+    font-size: 22px;
+    font-weight: 500;
+    font-family: 'Sevillana', sans-serif;
+}
+
+.container .wrapper{
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+
+.wrapper .editor-panel{
+    width: 280px;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.editor-panel .title{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.editor-panel .options, .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.editor-panel button{
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 1px solid #8c84fe;
+    background: transparent;
+    cursor: pointer;
+}
+
+.editor-panel button:hover{
+    color: #33023d;
+    background: #c776fa;
+}
+
+.editor-panel .filter button{
+    width: calc(100% / 2 - 4px);
+}
+
+.editor-panel .rotate{
+    margin-top: 17px;
+}
+
+.editor-panel .rotate button{
+    width: calc(100% / 4 - 3px);
+}
+
+.rotate button:nth-child(3),
+.rotate button:nth-child(4){
+    font-size: 18px;
+}
+
+.filter button.active{
+    color: #33023d;
+    background: #d08afb;
+}
+
+.filter .slider{
+    margin-top: 12px;
+}
+
+.filter .slider .filter-info{
+    display: flex;
+    color: #464646;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.filter .slider input{
+    width: 100%;
+    height: 4px;
+    accent-color: #7067f8 ;
+    cursor: pointer;
+}
+
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.preview-img img{
+    cursor: pointer;
+    max-width: 490px;
+    max-height: 335px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controls button{
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    padding: 11px 20px;
+    border-radius: 10px;
+    border: 2px solid #4e4a89;
+}
+
+.controls button:hover{
+    background: #c776fa;
+}
+
+.controls .reset-filter, .save-img{
+    color: #484e53;
+}
+
+@media screen and (max-width: 760px) {
+    .container{
+        padding: 25px;
+    }
+
+    .container .wrapper{
+        flex-wrap: wrap-reverse;
+    }
+
+    .wrapper .editor-panel{
+        width: 100%;
+    }
+
+    .wrapper .preview-img{
+        width: 100%;
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .controls button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls .row{
+        width: 100%;
+    }
+
+    .controls .row .save-img{
+        margin-left: 0;
+    }
+}
