@@ -32,6 +32,11 @@ body{
     pointer-events: none;
 }
 
+.container .head{
+    display: flex;
+    justify-content: center;
+}
+
 .container h2{
     font-size: 22px;
     font-weight: 500;
